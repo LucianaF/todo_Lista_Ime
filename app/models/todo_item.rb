@@ -5,3 +5,4 @@ class TodoItem < ActiveRecord::Base
   	!completed_at.blank?
   end
 end
+
