@@ -9,16 +9,16 @@ class TodoItemsController < ApplicationController
 
 	def destroy
 		if @todo_item.destroy
-			flash[:success] = "Todo List item was deleted."
+			flash[:success] = " Elementi i listes u fshi ."
 		else
-			flash[:error] = "Todo List item could not be deleted."
+			flash[:error] = "Elementi i listes nuk mund te fshihet."
 		end
 		redirect_to @todo_list
 	end
 
 	def complete
 		@todo_item.update_attribute(:completed_at, Time.now)
-		redirect_to @todo_list, notice: "Todo item completed"
+		redirect_to @todo_list, notice: "Elementi i listes u perfundua."
 	end
 
 	private
@@ -32,7 +32,7 @@ class TodoItemsController < ApplicationController
 	end
 
 	def todo_item_params
-		params[:todo_item].permit(:content)
+		params[:todo_item].permit(:permbajtja)
 	end
 
 end
